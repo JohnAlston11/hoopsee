@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-let config = {
-  headers: {'Access-Control-Allow-Origin': '*'}
-};
+
 
 class App extends Component {
   constructor(){
@@ -13,7 +11,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    axios.get('http://localhost:3000')
+    axios.get('http://localhost:8000')
     .then(res=>console.log(res.data))
     .catch(err=>console.log(err))
   }
