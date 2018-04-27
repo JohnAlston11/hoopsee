@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import {Link, Route, Switch} from 'react-router-dom';
+import Home from './home/home.js';
+import Maps from './map/maps.js';
 
-
-class App extends Component {
-  constructor(){
+export default class App extends Component {
+  constructor(props){
     super();
     this.state = {data: []};
   }
@@ -17,14 +19,20 @@ class App extends Component {
     .catch(err=>console.log(err))
   }
   render() {
+
     return (
       <div className="App">
-        {this.state.data.map((el, key)=>(
-          <p key={key}>{el.Name}</p>
-        ))}
+        <Link to="/"><h1>HoopSee</h1></Link>
+        <Link to='/courts'>Play Ball</Link>
+        <Link to='/events'>Events</Link>
+        <Link to='/permits'>Start A Tournament</Link>
+        <Link to='/about'>About</Link>
+
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/courts'><Maps props={this.state.data} /></Route>
+        </Switch>
       </div>
     );
   }
 }
-
-export default App;
