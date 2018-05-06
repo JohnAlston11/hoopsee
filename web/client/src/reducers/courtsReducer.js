@@ -1,10 +1,17 @@
-export default function reducer(state = {}, action){
+
+export default (state = {
+    data: [],
+    todos: ['clean', 'shower', 'wash'],
+    todo:'',
+    fetching: false,
+    fetched: false,
+    error: null
+}, action)=>{
     switch(action.type){
-        case 'INC':{ 
-            return 0;
+        case 'SET':{ 
+            return  state;
         }
-        case 'DEC':{ 
-            return 9
-        }
+        default:
+            return state;
     }
 }

@@ -1,10 +1,7 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-image: url(https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Basketball-Court-Wallpaper-for-Desktop-PIC-WPC002982.jpg);
-  background-repeat: no-repeat;
-    background-size: 100% 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 html {
     height: 100%
