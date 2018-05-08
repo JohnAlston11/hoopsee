@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-import {Link, Route, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import Home from './components/home/home.js';
-import Maps from './components/map/maps.js';
+import Nyc from './components/nyc/nyc.js';
 import {connect} from 'react-redux';
 
 class App extends Component {
@@ -24,16 +24,16 @@ class App extends Component {
 
     return (
       <div>
-        <div style={{backgroundColor: 'orangered'}} className="App">
+        <div style={{backgroundColor: 'black'}} className="App">
           <a style={{fontSize: '50px'}} href="/">HoopSee</a><br/><br/>
-          <Link to='/courts'>Play Ball</Link>
-          <Link to='/events'>Events</Link>
-          <Link to='/permits'>Start A Tournament</Link>
-          <Link to='/about'>About</Link>
+          <a className='links' href='/courts'>Play Ball</a>
+          <a className='links' href='/events'>Events</a>
+          <a className='links' href='/permits'>Start A Tournament</a>
+          <a className='links' href='/about'>About</a>
         </div>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/courts' component={Maps} />
+          <Route path='/courts' component={Nyc} />
         </Switch>
       </div>
     );
