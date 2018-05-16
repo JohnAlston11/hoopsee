@@ -4,7 +4,6 @@ import axios from 'axios';
 import {Route, Switch} from 'react-router-dom';
 import Home from './components/home/home.js';
 import Nyc from './components/nyc/nyc.js';
-import {connect} from 'react-redux';
 
 class App extends Component {
   constructor(props){
@@ -40,4 +39,4 @@ class App extends Component {
   }
 }
 
-export default connect(state=> state)(App)
+export default App;
