@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-import {Route, Switch} from 'react-router-dom';
+import {Link , Route, Switch} from 'react-router-dom';
 import Home from './components/home/home.js';
 import Nyc from './components/nyc/nyc.js';
 
@@ -12,7 +12,6 @@ class App extends Component {
   }
 
   componentDidMount(){
-    const {dispatch} = this.props;
     axios.get('http://localhost:8000')
     .then(res=>{
       this.setState({data: res.data})
@@ -24,11 +23,11 @@ class App extends Component {
     return (
       <div>
         <div style={{backgroundColor: 'black'}} className="App">
-          <a style={{fontSize: '50px'}} href="/">HoopSee</a><br/><br/>
-          <a className='links' href='/courts'>Play Ball</a>
-          <a className='links' href='/events'>Events</a>
-          <a className='links' href='/permits'>Start A Tournament</a>
-          <a className='links' href='/about'>About</a>
+          <Link style={{fontSize: '50px'}} to="/">HoopSee</Link><br/><br/>
+          <Link className='links' to='/courts'>Play Ball</Link>
+          <Link className='links' to='/events'>Events</Link>
+          <Link className='links' to='/permits'>Start A Tournament</Link>
+          <Link className='links' to='/about'>About</Link>
         </div>
         <Switch>
           <Route exact path='/' component={Home} />

@@ -418,8 +418,8 @@ module.exports = [{
     "Prop_ID": "X033",
     "Name": "Kossuth Playground",
     "Location": "Moshulu Pkwy N & Kossuth Ave.",
-    "Num_of_Courts": null,
-    "Accessible": "N",
+    "Num_of_Courts": "3",
+    "Accessible": "Y",
     "lat": "40.8776",
     "lon": "-73.8827"
 }, {
@@ -482,15 +482,15 @@ module.exports = [{
     "Prop_ID": "X153",
     "Name": "Merriam Playground (lower)",
     "Location": "W 168 St., Merriam Ave., Ogden Ave. and University Ave.",
-    "Num_of_Courts": null,
-    "Accessible": "N",
+    "Num_of_Courts": "3",
+    "Accessible": "Y",
     "lat": "40.8388",
     "lon": "-73.9266"
 }, {
     "Prop_ID": "X153",
     "Name": "Merriam Playground (upper)",
     "Location": "W 168 St., Merriam Ave., Ogden Ave. and University Ave.",
-    "Num_of_Courts": null,
+    "Num_of_Courts": "2",
     "Accessible": "N",
     "lat": "40.8408",
     "lon": "-73.9269"
@@ -810,8 +810,8 @@ module.exports = [{
     "Prop_ID": "X104",
     "Name": "Williamsbridge Oval",
     "Location": "Van Cortlandt Ave. E, Bainbridge Ave. and Reservoir Oval",
-    "Num_of_Courts": null,
-    "Accessible": "N",
+    "Num_of_Courts": "2",
+    "Accessible": "Y",
     "lat": "40.8768",
     "lon": "-73.8776"
 }, {
@@ -3899,7 +3899,7 @@ module.exports = [{
     "Name": "Smokey Oval Playground",
     "Location": "Atlantic, 95 Ave., and 125 St.",
     "Num_of_Courts": "2",
-    "Accessible": "N",
+    "Accessible": "Y",
     "lat": "40.6943",
     "lon": "-73.8208"
 }, {
