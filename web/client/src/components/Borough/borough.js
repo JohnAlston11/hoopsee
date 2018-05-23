@@ -12,7 +12,7 @@ export default class Bronx extends Component{
             this.setState({courts: res.data});
         })
         .catch(err=>console.log(err))
-    }
+    };
 
     checkBorough = props =>{
         const {borough} = props.match.params;

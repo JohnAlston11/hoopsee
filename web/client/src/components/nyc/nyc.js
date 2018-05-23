@@ -26,19 +26,19 @@ export class MapContainer extends Component {
       let si = res.data.filter(court=>court.Prop_ID.startsWith('R'));
       let filter;
       switch(this.props.location.pathname){
-        case '/courts/brooklyn':
+        case '/courts/B':
           filter = bk;
           break;
-        case '/courts/bronx':
+        case '/courts/X':
           filter = bx;
           break;
-        case '/courts/queens':
+        case '/courts/Q':
           filter = q;
           break;
-        case '/courts/manhattan':
+        case '/courts/M':
             filter = m;
             break;
-        case '/courts/statenisland':
+        case '/courts/R':
             filter = si;
             break;
         default:
