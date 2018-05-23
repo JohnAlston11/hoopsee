@@ -2,11 +2,8 @@ import React, {Component} from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import axios from 'axios';
 import {Link, Switch, Route} from 'react-router-dom';
-import Bronx from '../Bronx/bronx';
-import Brooklyn from '../brooklyn/brooklyn';
-import Queens from '../queens/queens';
-import Manhattan from '../manhattan/manhattan';
-import StatenIsland from '../statenisland/statenisland';
+import Borough from '../Borough/borough';
+
 // ...
 
 
@@ -112,11 +109,7 @@ export class MapContainer extends Component {
           <p className="courtNames" key={key}>{court.Name}</p>
         ))}
         <Switch>
-          <Route path='/courts/bronx' component={Bronx} />
-          <Route path='/courts/brooklyn' component={Brooklyn} />
-          <Route path='/courts/queens' component={Queens} />
-          <Route path='/courts/manhattan' component={Manhattan} />
-          <Route path='/courts/statenisland' component={StatenIsland} />
+          <Route path='/courts/:borough' component={Borough} />
         </Switch>
       </div>
     )
