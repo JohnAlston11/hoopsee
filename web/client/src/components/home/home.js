@@ -24,12 +24,13 @@ export default class Home extends Component{
                 <h4>
                     Click <a href='/courts'>Here</a> For All NYC B-Ball Courts, or Choose By Borough:
                 </h4>
-                <Link to="/courts" style={{color: 'yellow'}} ><div style={{backgroundImage:`url('http://triborodesign.com/public/user-content/files/2014/02/16/nikenyc_01-1142.jpg')`}} id='all' className='icons' > ALL BOROUGHS </div></Link>
-                <Link to="/courts/X" style={{color: 'yellow'}} ><div style={{backgroundImage:`url('${bx}'`}} id='bx' className='icons' >BRONX </div></Link>
-                <Link to="/courts/B" style={{color: 'yellow'}} ><div style={{backgroundImage:`url('${bk}')`}} id='bk' className='icons' > BROOKLYN </div></Link>
-                <Link to="/courts/M" style={{color: 'yellow'}} ><div style={{backgroundImage:`url('${m}')`}} id='mh' className='icons' > MANHATTAN </div></Link>
-                <Link to="/courts/Q" style={{color: 'yellow'}} ><div style={{backgroundImage:`url('${q}')`}} id='q' className='icons' > QUEENS </div></Link>
-                <Link to="/courts/R" style={{color: 'yellow'}} ><div style={{backgroundImage:`url('${nyc}')`}} id='other' className='icons' > STATEN ISLAND </div></Link>
+
+                <Link to="/courts" style={{padding: '5px', color: 'yellow'}} ><div style={{backgroundImage:`url('http://triborodesign.com/public/user-content/files/2014/02/16/nikenyc_01-1142.jpg')`}} id='all' className='icons' > ALL BOROUGHS </div></Link>
+                <Link to="/courts/X" style={{padding: '5px', color: 'yellow'}} ><div style={{backgroundImage:`url('${bx}'`}} id='bx' className='icons' >BRONX </div></Link>
+                <Link to="/courts/B" style={{padding: '5px', color: 'yellow'}} ><div style={{backgroundImage:`url('${bk}')`}} id='bk' className='icons' > BROOKLYN </div></Link>
+                <Link to="/courts/M" style={{padding: '5px', color: 'yellow'}} ><div style={{backgroundImage:`url('${m}')`}} id='mh' className='icons' > MANHATTAN </div></Link>
+                <Link to="/courts/Q" style={{padding: '5px', color: 'yellow'}} ><div style={{backgroundImage:`url('${q}')`}} id='q' className='icons' > QUEENS </div></Link>
+                <Link to="/courts/R" style={{padding: '5px', color: 'yellow'}} ><div style={{backgroundImage:`url('${nyc}')`}} id='other' className='icons' > STATEN ISLAND </div></Link>
             </div>
         )
     }

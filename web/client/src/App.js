@@ -22,13 +22,21 @@ class App extends Component {
 
     return (
       <div>
+        
         <div style={{backgroundColor: 'black'}} className="App">
           <Link style={{fontSize: '50px'}} to="/">HoopSee</Link><br/><br/>
-          <Link className='links' to='/courts'>Play Ball</Link>
-          <Link className='links' to='/events'>Events</Link>
-          <Link className='links' to='/permits'>Start A Tournament</Link>
-          <Link className='links' to='/about'>About</Link>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <Link className='navbar-brand' to='/courts'>Play Ball</Link>
+            <Link className='navbar-brand' to='/events'>Events</Link>
+            <Link className='navbar-brand' to='/permits'>Start A Tournament</Link>
+            <Link className='navbar-brand' to='/about'>About</Link> 
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>      
+          </nav>
         </div>
+        
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/courts' component={Nyc} />
