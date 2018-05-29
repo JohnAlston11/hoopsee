@@ -11,8 +11,7 @@
 }
 
 body{
-  background-color: orangered;
-  margin-left: 0%;
+	background-color: orangered;
 }
 
 #map{
@@ -199,4 +198,10 @@ p { margin: 0; }
 .chat-feedback {
 	font-style: italic;	
 	margin: 0 0 0 80px;
+}
+
+.login{
+	text-align: center;
+	width: 300px;
+	margin-left: 35%
 }
