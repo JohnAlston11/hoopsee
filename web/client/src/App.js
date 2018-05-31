@@ -7,17 +7,24 @@ import Nyc from './components/nyc/nyc.js';
 import Login from './components/LogIn/login';
 import Signup from './components/Signup/signup';
 import soon from './images/Comingsoon.png';
-
+import Logout from './components/LogOut/logout';
 class App extends Component {
   constructor(props){
     super();
-    this.state = {login: false};
+    this.state = {loggedin: false};
   }
 
   componentDidMount(){
-    
+    axios.get('http://localhost:8000/users/loggedin')
+    .then(res=>{
+      this.setState({loggedin: res.data})
+    })
+    .catch(err =>{
+      this.setState({loggedin: false})
+    })
   }
   render() {
+    const {loggedin} = this.state;
     return (
       <div>
         
@@ -28,8 +35,9 @@ class App extends Component {
             <Link className='navbar-brand' to='/events'>Events</Link>
             <Link className='navbar-brand' to='/permits'>Start A Tournament</Link>
             <Link className='navbar-brand' to='/about'>About</Link> 
-            <Link className='navbar-brand' to='/login'>Log In</Link>
-            <Link className='navbar-brand' to='/signup'>Sign Up</Link>
+            <Link hidden={loggedin} className='navbar-brand' to='/login'>Log In</Link>
+            <Link hidden={loggedin} className='navbar-brand' to='/signup'>Sign Up</Link>
+            <Link hidden={!loggedin} className='navbar-brand' to='/logout'>Log Out</Link>
             <form style={{marginTop: '10px', float: 'right'}} className="form-inline my-2 my-lg-0">
               <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -45,6 +53,7 @@ class App extends Component {
           <Route path='/about' render={()=>(<img style={{marginLeft: '30%'}} src={soon}/>)} />
           <Route path='/events' render={()=>(<img style={{marginLeft: '30%'}} src={soon}/>)} />
           <Route path='/permits' render={()=>(<img style={{marginLeft: '30%'}} src={soon}/>)} />
+          <Route path='/logout' component={Logout} />
         </Switch>
       </div>
     );

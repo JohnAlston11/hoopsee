@@ -7,7 +7,7 @@ export default class Chat extends Component{
         super(props);
 
         this.state = {
-            username: '',
+            username: localStorage.getItem('user'),
             message: '',
             messages: []
         };
@@ -25,13 +25,17 @@ export default class Chat extends Component{
         };
 
         this.sendMessage = ev => {
+            const {username, message} = this.state;
             ev.preventDefault();
-            this.socket.emit('SEND_MESSAGE', {
-                author: this.state.username,
-                message: this.state.message
-            })
-            this.setState({message: ''});
-
+            if(username){
+                this.socket.emit('SEND_MESSAGE', {
+                    author: username,
+                    message: this.state.message
+                })
+                this.setState({message: ''});
+            }else{
+                alert('You must sign in to write messages')
+            }
         }
     }
     render(){
@@ -57,7 +61,6 @@ export default class Chat extends Component{
                             </div>
                             <form onSubmit={(e)=>{e.preventDefault()}}>
                                 <div className="card-footer">
-                                    <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-control"/>
                                     <br/>
                                     <input type="text" placeholder="Message" className="form-control" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})}/>
                                     <br/>

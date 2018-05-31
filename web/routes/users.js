@@ -5,6 +5,7 @@ const saltRounds = 10;
 const salt = bcrypt.genSalt(saltRounds);
 const passport = require('passport');
 let user;
+let newReq;
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -36,6 +37,27 @@ router.post('/signup', function (req, res, next) {
   });
 });
 
+router.post('/login', passport.authenticate('local'), (req, res)=>{
+  newReq = req;
+  console.log(req);
+  res.send({
+    message: 'logged in',
+    user: req.body.username
+  });
+});
+
+router.get('/loggedin', (req, res)=>{
+  if(newReq){
+    res.send(newReq.isAuthenticated());
+  }
+})
+
+router.get('/logout', function(req, res){
+  user = '';
+  newReq.logOut();
+  newReq.session.destroy();
+  res.send({message: 'logged out'})
+})
 
 passport.serializeUser(function (user_id, done) {
   done(null, user_id);
