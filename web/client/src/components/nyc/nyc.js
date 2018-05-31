@@ -60,9 +60,13 @@ export class NYC extends Component {
           google={this.props.google}
           style={{width: '600px', height: '400px', marginLeft:"40%"}}
           />
-        {this.state.data.map(court=>(
+        {this.state.data.map((court, key)=>(
           <div>
-            <h1>{court.Name}</h1>
+            <Link key={key} to={`/courts/${court.Prop_ID[0]}/${court.Prop_ID}/`} > 
+                    <h1>
+                        {court.Name}
+                    </h1> 
+                </Link>
           </div>
         ))}
       </div>

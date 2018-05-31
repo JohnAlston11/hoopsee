@@ -11,4 +11,48 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+/* Create New User */
+router.post('/signup', function (req, res, next) {
+  const db = require('../db.js');
+  const un = req.body.username;
+  const pw = req.body.pw1;
+
+  bcrypt.hash(pw, saltRounds, function (err, hash) {
+    db.query(`INSERT INTO users (username, password) VALUES (?, ?)`, [un, hash],
+      function (err, results, fields) {
+        if (err) throw err;
+
+        db.query('SELECT LAST_INSERT_ID() as user_id', function (error, results, fields) {
+          if (error) throw error;
+
+          const user_id = results[0];
+          console.log(user_id);
+        })
+        res.send({
+          message: 'All Set.. Now Log In'
+        })
+
+      })
+  });
+});
+
+
+passport.serializeUser(function (user_id, done) {
+  done(null, user_id);
+});
+
+passport.deserializeUser((user_id, done)=> {
+  done(null, user_id);
+});
+
+function authenicationMiddleware() {
+  return (req, res, next) => {
+
+    if (req.isAuthenticated()) return next();
+
+    res.redirect('/login')
+  };
+};
+
+
 module.exports = router;
