@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import io from "socket.io-client";
+import Time from 'react-time';
 
 export default class Chat extends Component{
     constructor(props){
@@ -45,7 +46,10 @@ export default class Chat extends Component{
                                 <div className="messages">
                                     {this.state.messages.map(message => {
                                         return (
-                                            <div>{message.author}: {message.message}</div>
+                                            <div>
+                                                <Time style={{float: 'right'}} value={new Date()} format="hh:mm" />
+                                                {message.author}: {message.message}
+                                            </div>
                                         )
                                     })}
                                 </div>

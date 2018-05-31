@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import Time from 'react-time';
 import './court.css';
 import Chat from '../Chat/chat';
 
@@ -8,9 +7,6 @@ import Chat from '../Chat/chat';
 export default class Court extends Component{
     state = {
 		data: [],
-		messages: ['Hey'],
-		input: 'yoo',
-		user: 'John'
 	};
 
     componentDidMount(){
@@ -20,15 +16,6 @@ export default class Court extends Component{
             this.setState({data: court})
 		})
 		.catch(err=>console.log(err))
-	};
-	
-	handleInput = e =>{
-
-	}
-
-	handleChat = (e) =>{
-		e.preventDefault();
-
 	};
 
     render(){

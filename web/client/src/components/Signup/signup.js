@@ -1,32 +1,51 @@
 import React from 'react';
 import axios from 'axios';
-import Link from 'react-router-dom';
-
+import {Link} from 'react-router-dom';
 
 export default class Signup extends React.Component{
-    state = {};
+    constructor(){
+        super();
+        this.state = {
+            username: '',
+            pw1: '',
+            pw2: ''
+        }
+    }
+
+    handleSubmit = (e) => {
+        const {username, pw1, pw2} = this.state;
+        e.preventDefault();
+        if(pw1 === pw2){
+            axios.post('http://localhost:8000/users/signup', 
+            {username: username, pw1: pw1})
+            .then(res=>{
+                console.log(res)
+            })
+        }
+    }
     
     render(){
+        const {username, pw1, pw2} = this.state;
         return(
             <div className="login">
 
                 <h1>Sign Up HERE!</h1>
 
-                <form id="signup" method="POST" action="/signup">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" name="username" id="username" placeholder="Username" />
+                <form onSubmit={this.handleSubmit} id="signup" method="POST">
+                    <div className="form-group">
+                        <label htmlFor="username">Username</label>
+                        <input type="text" className="form-control" name="username" id="username" placeholder="Username" value={username} onChange={(e)=>{this.setState({username: e.target.value})}} />
                     </div>
-                    <div class="form-group">
-                        <label for="pw1">Password</label>
-                        <input type="password" class="form-control" name="pw1" id="pw1" placeholder="Password" />
+                    <div className="form-group">
+                        <label htmlFor="pw1">Password</label>
+                        <input type="password" className="form-control" name="pw1" id="pw1" placeholder="Password" value={pw1} onChange={(e)=>{this.setState({pw1: e.target.value})}} />
                     </div>
-                    <div class="form-group">
-                        <label for="pw2">Confirm Password</label>
-                        <input type="password" class="form-control" name="pw2" id="pw2" placeholder="Confirm Password" />
+                    <div className="form-group">
+                        <label htmlFor="pw2">Confirm Password</label>
+                        <input type="password" className="form-control" name="pw2" id="pw2" placeholder="Confirm Password" value={pw2} onChange={(e)=>{this.setState({pw2: e.target.value})}} />
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <p>Aready have an account? <a href='/login'>Log In Here</a></p>
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <p>Aready have an account? <Link to='/login'>Log In Here</Link></p>
                 </form>
             </div>
         );
