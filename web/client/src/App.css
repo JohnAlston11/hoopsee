@@ -14,12 +14,6 @@ body{
 	background-color: orangered;
 }
 
-#map{
-  width: 300px;
-  height: 200px;
-
-}
-
 .icons{
   display: inline-flex;
   height: auto;
@@ -94,4 +88,16 @@ p { margin: 0; }
 	text-align: center;
 	width: 300px;
 	margin-left: 35%
+}
+
+.courtNames{
+  background-color: aqua;
+  height: 400px;
+  overflow: scroll;
+
+}
+
+.map{
+  width: 400px;
+  height: 200px
 }
