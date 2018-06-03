@@ -34,7 +34,8 @@ export default class Chat extends Component{
                 })
                 this.setState({message: ''});
             }else{
-                alert('You must sign in to write messages')
+                alert('You must sign in to write messages');
+                this.setState({message: ''});
             }
         }
     }
