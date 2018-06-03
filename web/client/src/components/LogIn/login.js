@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import {Redirect} from 'react-router';
 
 
 export default class Login extends React.Component{
@@ -8,16 +9,30 @@ export default class Login extends React.Component{
         super();
         this.state = {
             username: '',
-            pw1: ''
+            pw1: '',
+            redirect: false
         }
     }
     
-    render(){
+    handleLogin = (e) =>{
         const {username, pw1} = this.state;
+        e.preventDefault();
+        axios.post('http://localhost:8000/users/login', {username: username, password: pw1})
+        .then(res=>{
+            this.setState({redirect: true})
+        })
+        .catch(err=>{console.log(err)})
+    }
+
+    render(){
+        const {username, pw1, redirect} = this.state;
+        if(redirect){
+            return <Redirect to='/'/>;
+        };
         return(
             <div style={{textAlign: 'center', width: '300px'}} className='login'>
                 <h2>Welcome</h2>
-                <form method="POST">
+                <form onSubmit={this.handleLogin} method="POST">
                     <div className="form-group">
                         <label htmlFor="loginuser">Username</label>
                         <input type="text" className="form-control" name="username" id="loginuser" placeholder="Username" value={username} onChange={(e)=>{this.setState({username: e.target.value})}} />

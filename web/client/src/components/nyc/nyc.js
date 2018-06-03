@@ -13,7 +13,7 @@ export class NYC extends Component {
     data: [],
     showingInfoWindow: false,
     activeMarker: null,
-    selectedPlace: {},
+    selectedPlace: {courtID: ''},
     accessible: false
   };
 
@@ -50,25 +50,28 @@ export class NYC extends Component {
     const {data, showingInfoWindow, activeMarker, selectedPlace, accessible} = this.state;
     return(
       <div>
-        <MapContainer data={data}
-          showingInfoWindow={showingInfoWindow}
-          activeMarker={activeMarker}
-          selectedPlace={selectedPlace}
-          accessible={accessible}
-          onMapClicked={this.onMapClicked}
-          onMarkerClick={this.onMarkerClick}
-          google={this.props.google}
-          style={{width: '600px', height: '400px', marginLeft:"40%"}}
+        <div className="courtNames">
+          {this.state.data.map((court, key)=>(
+              <Link key={key} to={`/courts/${court.Prop_ID[0]}/${court.Prop_ID}/`} > 
+                  <p className={'name'}>
+                      {court.Name}
+                  </p> 
+              </Link>
+          ))}
+        </div>
+        <div className={'map'}>
+          <MapContainer data={data}
+            showingInfoWindow={showingInfoWindow}
+            activeMarker={activeMarker}
+            selectedPlace={selectedPlace}
+            accessible={accessible}
+            onMapClicked={this.onMapClicked}
+            onMarkerClick={this.onMarkerClick}
+            google={this.props.google}
+            style={{position: 'absolute'}}
+            link={`/courts/${selectedPlace.courtID[0]}/${selectedPlace.courtID}/`}
           />
-        {this.state.data.map((court, key)=>(
-          <div>
-            <Link key={key} to={`/courts/${court.Prop_ID[0]}/${court.Prop_ID}/`} > 
-                    <h1>
-                        {court.Name}
-                    </h1> 
-                </Link>
-          </div>
-        ))}
+        </div>
       </div>
     )
   }

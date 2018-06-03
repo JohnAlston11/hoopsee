@@ -10,7 +10,7 @@ export default class Bronx extends Component{
         data: [],
         showingInfoWindow: false,
         activeMarker: null,
-        selectedPlace: {},
+        selectedPlace: {courtID: ''},
         accessible: false
     };
 
@@ -47,20 +47,24 @@ export default class Bronx extends Component{
         const {borough} = props.match.params;
         const {data, showingInfoWindow, activeMarker, selectedPlace, accessible} = this.state;
         let selected = data.filter(court => court.Prop_ID.startsWith(borough));
-        console.log(selected);
         return (
             <div>
-                <MapContainer data={selected}
-                    showingInfoWindow={showingInfoWindow}
-                    activeMarker={activeMarker}
-                    selectedPlace={selectedPlace}
-                    accessible={accessible}
-                    onMapClicked={this.onMapClicked}
-                    onMarkerClick={this.onMarkerClick}
-                    google={this.props.google}
-                    style={{width: '600px', height: '400px', marginLeft:"40%"}}
-                />
-                <Borough select={selected} />
+                <div className="courtNames">
+                    <Borough select={selected} />
+                </div>
+                <div className={'map'}>
+                    <MapContainer data={selected}
+                        showingInfoWindow={showingInfoWindow}
+                        activeMarker={activeMarker}
+                        selectedPlace={selectedPlace}
+                        accessible={accessible}
+                        onMapClicked={this.onMapClicked}
+                        onMarkerClick={this.onMarkerClick}
+                        google={this.props.google}
+                        style={{position: 'absolute'}}
+                        link={`/courts/${selectedPlace.courtID[0]}/${selectedPlace.courtID}/`}
+                    />
+                </div>
             </div>
         )
     }
