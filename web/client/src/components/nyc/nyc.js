@@ -13,7 +13,7 @@ export class NYC extends Component {
     data: [],
     showingInfoWindow: false,
     activeMarker: null,
-    selectedPlace: {},
+    selectedPlace: {courtID: ''},
     accessible: false
   };
 
@@ -53,9 +53,9 @@ export class NYC extends Component {
         <div className="courtNames">
           {this.state.data.map((court, key)=>(
               <Link key={key} to={`/courts/${court.Prop_ID[0]}/${court.Prop_ID}/`} > 
-                  <h1>
+                  <p className={'name'}>
                       {court.Name}
-                  </h1> 
+                  </p> 
               </Link>
           ))}
         </div>
@@ -68,7 +68,8 @@ export class NYC extends Component {
             onMapClicked={this.onMapClicked}
             onMarkerClick={this.onMarkerClick}
             google={this.props.google}
-            style={{width: '600px', height: '300px', marginTop: '-50%'}}
+            style={{position: 'absolute'}}
+            link={`/courts/${selectedPlace.courtID[0]}/${selectedPlace.courtID}/`}
           />
         </div>
       </div>

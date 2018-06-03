@@ -6,9 +6,9 @@ const Borough = ({select}) =>{
         <div>
             {select.map((borough, key)=>(
                 <Link key={key} to={`/courts/${borough.Prop_ID[0]}/${borough.Prop_ID}/`} > 
-                    <h1>
+                    <p className={'name'}>
                         {borough.Name}
-                    </h1> 
+                    </p> 
                 </Link>
             ))}
         </div>

@@ -91,13 +91,20 @@ p { margin: 0; }
 }
 
 .courtNames{
-  background-color: aqua;
   height: 400px;
+  width: 35%;
   overflow: scroll;
+}
 
+.name{
+  font-size: 24px;
+  color: black;
 }
 
 .map{
-  width: 400px;
-  height: 200px
+  position: relative;
+  width: 50vw;
+  height: 60vh;
+  right: -45%;
+  margin-top: -30%
 }

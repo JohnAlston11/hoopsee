@@ -10,7 +10,6 @@ export default class Logout extends Component{
     componentDidMount(){
         Axios.get('http://localhost:8000/users/logout')
         .then(res=>{
-            localStorage.removeItem('user');
             this.setState({loggedout: true})
         })
         .catch(err=>console.log(err))

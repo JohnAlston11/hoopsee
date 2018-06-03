@@ -5,7 +5,7 @@ const saltRounds = 10;
 const salt = bcrypt.genSalt(saltRounds);
 const passport = require('passport');
 let user;
-let newReq;
+let newReq= '';
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -56,6 +56,7 @@ router.get('/logout', function(req, res){
   user = '';
   newReq.logOut();
   newReq.session.destroy();
+  newReq = '';
   res.send({message: 'logged out'})
 })
 

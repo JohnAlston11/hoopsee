@@ -19,7 +19,6 @@ export default class Login extends React.Component{
         e.preventDefault();
         axios.post('http://localhost:8000/users/login', {username: username, password: pw1})
         .then(res=>{
-            localStorage.setItem('user', res.data.user)
             this.setState({redirect: true})
         })
         .catch(err=>{console.log(err)})
