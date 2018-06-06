@@ -19,19 +19,25 @@ export default class Login extends React.Component{
         e.preventDefault();
         axios.post('http://localhost:8000/users/login', {username: username, password: pw1})
         .then(res=>{
-            this.setState({redirect: true})
+            this.setState({redirect: true});
+            window.location.reload();
         })
         .catch(err=>{console.log(err)})
-    }
+    };
 
+    signupDone = () =>{
+        let done = this.props.location.pathname.split('/')[2];
+        if(done === 'done') return <h2>Welcome,<br/>Thanks for Signing Up!</h2>
+        return <h2>Welcome</h2>
+    };
     render(){
         const {username, pw1, redirect} = this.state;
         if(redirect){
-            return <Redirect to='/'/>;
+            return <Redirect to='/' />;
         };
         return(
             <div style={{textAlign: 'center', width: '300px'}} className='login'>
-                <h2>Welcome</h2>
+                {this.signupDone()}
                 <form onSubmit={this.handleLogin} method="POST">
                     <div className="form-group">
                         <label htmlFor="loginuser">Username</label>

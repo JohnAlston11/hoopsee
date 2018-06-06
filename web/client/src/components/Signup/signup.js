@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import {Redirect} from 'react-router';
 
 export default class Signup extends React.Component{
     constructor(){
@@ -8,7 +9,8 @@ export default class Signup extends React.Component{
         this.state = {
             username: '',
             pw1: '',
-            pw2: ''
+            pw2: '',
+            redirect: false
         }
     }
 
@@ -19,13 +21,17 @@ export default class Signup extends React.Component{
             axios.post('http://localhost:8000/users/signup', 
             {username: username, pw1: pw1})
             .then(res=>{
-                console.log(res)
+                this.setState({redirect: true})
             })
+            .catch(err=>{console.log(err)});
         }
     }
     
     render(){
-        const {username, pw1, pw2} = this.state;
+        const {username, pw1, pw2, redirect} = this.state;
+        if(redirect){
+            return <Redirect to='/login/done'/>;
+        };
         return(
             <div className="login">
 
