@@ -17,7 +17,8 @@ class App extends Component {
   componentDidMount(){
     axios.get('http://localhost:8000/users/loggedin')
     .then(res=>{
-      this.setState({loggedin: res.data})
+      console.log(res)
+      this.setState({loggedin: res.data.auth})
     })
     .catch(err =>{
       this.setState({loggedin: false})
@@ -25,6 +26,7 @@ class App extends Component {
   }
   render() {
     const {loggedin} = this.state;
+
     return (
       <div>
         
@@ -35,9 +37,14 @@ class App extends Component {
             <Link className='navbar-brand' to='/events'>Events</Link>
             <Link className='navbar-brand' to='/permits'>Start A Tournament</Link>
             <Link className='navbar-brand' to='/about'>About</Link> 
-            <Link hidden={loggedin} className='navbar-brand' to='/login'>Log In</Link>
-            <Link hidden={loggedin} className='navbar-brand' to='/signup'>Sign Up</Link>
-            <Link hidden={!loggedin} className='navbar-brand' to='/logout'>Log Out</Link>
+            {loggedin ?(
+              <Link className='navbar-brand' to='/logout'>Log Out</Link>
+            ):(
+              <div>
+                <Link className='navbar-brand' to='/login'>Log In</Link>
+                <Link className='navbar-brand' to='/signup'>Sign Up</Link>
+              </div>
+            )}
             <form style={{marginTop: '10px', float: 'right'}} className="form-inline my-2 my-lg-0">
               <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -50,9 +57,9 @@ class App extends Component {
           <Route path='/courts' component={Nyc} />
           <Route path='/login' component={Login} />
           <Route path='/signup' component={Signup} />
-          <Route path='/about' render={()=>(<img style={{marginLeft: '30%'}} src={soon}/>)} />
-          <Route path='/events' render={()=>(<img style={{marginLeft: '30%'}} src={soon}/>)} />
-          <Route path='/permits' render={()=>(<img style={{marginLeft: '30%'}} src={soon}/>)} />
+          <Route path='/about' render={()=>(<img style={{marginLeft: '30%'}} src={soon} alt='' />)} />
+          <Route path='/events' render={()=>(<img style={{marginLeft: '30%'}} src={soon} alt='' />)} />
+          <Route path='/permits' render={()=>(<img style={{marginLeft: '30%'}} src={soon} alt='' />)} />
           <Route path='/logout' component={Logout} />
         </Switch>
       </div>

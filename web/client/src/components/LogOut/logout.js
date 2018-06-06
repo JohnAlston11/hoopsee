@@ -11,6 +11,7 @@ export default class Logout extends Component{
         Axios.get('http://localhost:8000/users/logout')
         .then(res=>{
             this.setState({loggedout: true})
+            window.location.reload();
         })
         .catch(err=>console.log(err))
     }
