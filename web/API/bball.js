@@ -167,7 +167,7 @@ module.exports = [{
     "lat": "40.8384",
     "lon": "-73.8993"
 }, {
-    "Prop_ID": "X010",
+    "Prop_ID": "X011",
     "Name": "Crotona Playground #2",
     "Location": "Crotona N between Marmion and Prospect",
     "Num_of_Courts": null,
@@ -175,7 +175,7 @@ module.exports = [{
     "lat": "40.8402",
     "lon": "-73.8913"
 }, {
-    "Prop_ID": "X010",
+    "Prop_ID": "X012",
     "Name": "Crotona Playground #5",
     "Location": "Crotona Pk E at E 173 St.",
     "Num_of_Courts": null,
@@ -183,7 +183,7 @@ module.exports = [{
     "lat": "40.8377",
     "lon": "-73.8908"
 }, {
-    "Prop_ID": "X010",
+    "Prop_ID": "X014",
     "Name": "Crotona Playground #6",
     "Location": "Crotona E between Suburban and Charlotte",
     "Num_of_Courts": null,
@@ -191,7 +191,7 @@ module.exports = [{
     "lat": "40.8371",
     "lon": "-73.8926"
 }, {
-    "Prop_ID": "X010",
+    "Prop_ID": "X015",
     "Name": "Crotona Playground #7",
     "Location": "Crotona E between Claremont and Charlotte",
     "Num_of_Courts": null,
@@ -199,7 +199,7 @@ module.exports = [{
     "lat": "40.8363",
     "lon": "-73.8949"
 }, {
-    "Prop_ID": "X010",
+    "Prop_ID": "X016",
     "Name": "Crotona Playground #9",
     "Location": "Crotona S between Clinton and Prospect",
     "Num_of_Courts": null,
@@ -479,7 +479,7 @@ module.exports = [{
     "lat": "40.8625",
     "lon": "-73.8585"
 }, {
-    "Prop_ID": "X153",
+    "Prop_ID": "X152",
     "Name": "Merriam Playground (lower)",
     "Location": "W 168 St., Merriam Ave., Ogden Ave. and University Ave.",
     "Num_of_Courts": "3",
@@ -565,7 +565,7 @@ module.exports = [{
     "Num_of_Courts": null,
     "Accessible": "N",
     "lat": "40.8688",
-    "lon": "73.7922"
+    "lon": "-73.7922"
 }, {
     "Prop_ID": "X151",
     "Name": "P.O. Hillario Serrano Playground",
@@ -599,7 +599,7 @@ module.exports = [{
     "lat": "40.816",
     "lon": "-73.9216"
 }, {
-    "Prop_ID": "X039",
+    "Prop_ID": "X040",
     "Name": "Pelham Bay Playground",
     "Location": "Middletown Road, off Bruckner Blvd.",
     "Num_of_Courts": null,
@@ -719,7 +719,7 @@ module.exports = [{
     "lat": "40.8125",
     "lon": "-73.9138"
 }, {
-    "Prop_ID": "X045",
+    "Prop_ID": "X046",
     "Name": "St. Mary's Playground West",
     "Location": "Saint Ann's Ave. & E 147 St.",
     "Num_of_Courts": null,
@@ -751,14 +751,6 @@ module.exports = [{
     "lat": "40.8229",
     "lon": "-73.8631"
 }, {
-    "Prop_ID": "X172",
-    "Name": "The Pearly Gates Playground",
-    "Location": "Tratman & Saint Peter's Aves.",
-    "Num_of_Courts": null,
-    "Accessible": "N",
-    "lat": "40.8659",
-    "lon": "-73.8503"
-}, {
     "Prop_ID": "X190",
     "Name": "Tiffany Playground",
     "Location": "Fox, Tiffany & E 167 Sts.",
@@ -783,7 +775,7 @@ module.exports = [{
     "lat": "40.9018",
     "lon": "-73.8543"
 }, {
-    "Prop_ID": "X002",
+    "Prop_ID": "X000",
     "Name": "Waring Playground",
     "Location": "Waring Ave. & Bronx Pk E.",
     "Num_of_Courts": null,
@@ -834,14 +826,6 @@ module.exports = [{
     "Prop_ID": "B253",
     "Name": "Albert J. Parham Playground",
     "Location": "Franklin Ave. between Willoughby and DeKalb Aves.",
-    "Num_of_Courts": null,
-    "Accessible": "N",
-    "lat": "40.6905",
-    "lon": "-73.9709"
-}, {
-    "Prop_ID": "B253",
-    "Name": "Albert Lysander Parham Playground",
-    "Location": "Adelphi St., Clermont, DeKalb and Willoughby Aves.",
     "Num_of_Courts": null,
     "Accessible": "N",
     "lat": "40.6905",
@@ -1663,7 +1647,7 @@ module.exports = [{
     "lat": "40.7035",
     "lon": "-73.924"
 }, {
-    "Prop_ID": "B057",
+    "Prop_ID": "B050",
     "Name": "Marine Park\/Jerry Debonis",
     "Location": "Gerritsen Ave. & Ave. X",
     "Num_of_Courts": null,
@@ -1711,7 +1695,7 @@ module.exports = [{
     "lat": "40.7213",
     "lon": "-73.9495"
 }, {
-    "Prop_ID": "B058",
+    "Prop_ID": "B060",
     "Name": "McCarren Park",
     "Location": "Abate Playground",
     "Num_of_Courts": null,
@@ -2319,7 +2303,7 @@ module.exports = [{
     "lat": "40.7911",
     "lon": "-73.9598"
 }, {
-    "Prop_ID": "M010",
+    "Prop_ID": "M013",
     "Name": "Central Park",
     "Location": "Great Lawn",
     "Num_of_Courts": null,
@@ -2359,7 +2343,7 @@ module.exports = [{
     "lat": "40.8201",
     "lon": "-73.9361"
 }, {
-    "Prop_ID": "M186",
+    "Prop_ID": "M187",
     "Name": "Col. Young Playground (Rear)",
     "Location": "W. 143 to 144 St. and Hudson River Dr.",
     "Num_of_Courts": null,
@@ -2471,7 +2455,7 @@ module.exports = [{
     "lat": "40.7969",
     "lon": "-73.9679"
 }, {
-    "Prop_ID": "M037",
+    "Prop_ID": "M038",
     "Name": "Ft. George Playground",
     "Location": "Ft. George Ave. & W. 192 St.",
     "Num_of_Courts": null,
@@ -2551,7 +2535,7 @@ module.exports = [{
     "lat": "40.763",
     "lon": "-73.9926"
 }, {
-    "Prop_ID": "M037",
+    "Prop_ID": "M039",
     "Name": "Highbridge Play Center (Indoors)",
     "Location": "W. 173 St. & Amsterdam Ave.",
     "Num_of_Courts": null,
@@ -2711,7 +2695,7 @@ module.exports = [{
     "lat": "40.8095",
     "lon": "-73.9386"
 }, {
-    "Prop_ID": "M056",
+    "Prop_ID": "M055",
     "Name": "Morningside Park",
     "Location": "W. 113 St. & Morningside",
     "Num_of_Courts": null,
@@ -2727,7 +2711,7 @@ module.exports = [{
     "lat": "40.8074",
     "lon": "-73.9573"
 }, {
-    "Prop_ID": "M056",
+    "Prop_ID": "M057",
     "Name": "Morningside Park",
     "Location": "W. 123 St. & Morningside",
     "Num_of_Courts": null,
@@ -2743,7 +2727,7 @@ module.exports = [{
     "lat": "40.7975",
     "lon": "-73.9356"
 }, {
-    "Prop_ID": "M037",
+    "Prop_ID": "M030",
     "Name": "Multi Purpose Playground",
     "Location": "W. 175 St. & Amsterdam Ave.",
     "Num_of_Courts": null,
@@ -2847,7 +2831,7 @@ module.exports = [{
     "lat": "40.7484",
     "lon": "-73.9693"
 }, {
-    "Prop_ID": "M158",
+    "Prop_ID": "M159",
     "Name": "Robert Wagner Playground",
     "Location": "E. 121 St. & 2 Ave.",
     "Num_of_Courts": null,
@@ -2863,7 +2847,7 @@ module.exports = [{
     "lat": "40.7738",
     "lon": "-73.9867"
 }, {
-    "Prop_ID": "M105",
+    "Prop_ID": "M105A",
     "Name": "Sara D. Roosevelt Park (A)",
     "Location": "Stanton St.",
     "Num_of_Courts": null,
@@ -2871,7 +2855,7 @@ module.exports = [{
     "lat": "40.7231",
     "lon": "-73.9909"
 }, {
-    "Prop_ID": "M105",
+    "Prop_ID": "M105B",
     "Name": "Sara D. Roosevelt Park (B)",
     "Location": "Delancey St. between Forsythe and Christie Sts.",
     "Num_of_Courts": null,
@@ -2879,7 +2863,7 @@ module.exports = [{
     "lat": "40.7221",
     "lon": "-73.9914"
 }, {
-    "Prop_ID": "M105",
+    "Prop_ID": "M105D",
     "Name": "Sara D. Roosevelt Park (D)",
     "Location": "Canal to Hester Sts.",
     "Num_of_Courts": null,
@@ -2935,7 +2919,7 @@ module.exports = [{
     "lat": "40.7654",
     "lon": "-73.9592"
 }, {
-    "Prop_ID": "M077",
+    "Prop_ID": "M077A",
     "Name": "St. Nicholas Park",
     "Location": "W. 141 St. & St. Nicholas Ave.",
     "Num_of_Courts": null,
@@ -2943,7 +2927,7 @@ module.exports = [{
     "lat": "40.816",
     "lon": "-73.9489"
 }, {
-    "Prop_ID": "M077",
+    "Prop_ID": "M077B",
     "Name": "St. Nicholas Park",
     "Location": "W. 133 St. & St. Nicholas Ave.",
     "Num_of_Courts": null,
@@ -2951,7 +2935,7 @@ module.exports = [{
     "lat": "40.8213",
     "lon": "-73.9467"
 }, {
-    "Prop_ID": "M077",
+    "Prop_ID": "M077C",
     "Name": "St. Nicholas Playground (North)",
     "Location": "129 to 130 St. & 7 Ave.",
     "Num_of_Courts": null,
@@ -2959,7 +2943,7 @@ module.exports = [{
     "lat": "40.8123",
     "lon": "-73.9469"
 }, {
-    "Prop_ID": "M077",
+    "Prop_ID": "M077D",
     "Name": "St. Nicholas Playground (South)",
     "Location": "128 St. & 7 Ave.",
     "Num_of_Courts": null,
@@ -2967,7 +2951,7 @@ module.exports = [{
     "lat": "40.8111",
     "lon": "-73.9475"
 }, {
-    "Prop_ID": "M077",
+    "Prop_ID": "M077E",
     "Name": "St. Nicholas Terrace",
     "Location": "W. 129 St. & St. Nicholas Ave.",
     "Num_of_Courts": null,
@@ -2991,7 +2975,7 @@ module.exports = [{
     "lat": "40.7835",
     "lon": "-73.9442"
 }, {
-    "Prop_ID": "M037",
+    "Prop_ID": "M032",
     "Name": "Sunken Playground",
     "Location": "W. 167 St. & Edgecombe Ave.",
     "Num_of_Courts": null,
@@ -3079,7 +3063,7 @@ module.exports = [{
     "lat": "40.8317",
     "lon": "-73.942"
 }, {
-    "Prop_ID": "Q099",
+    "Prop_ID": "Q099A",
     "Name": "Albert H. Mauro",
     "Location": "Park Dr. East & 73 Terrace",
     "Num_of_Courts": "3",
@@ -3367,7 +3351,7 @@ module.exports = [{
     "lat": "40.7756",
     "lon": "-73.8173"
 }, {
-    "Prop_ID": "Q099",
+    "Prop_ID": "Q099B",
     "Name": "Flushing Meadows Corona Park Meadow Lake East",
     "Location": "W\/S of Meadow Lake & Grand Central Pkwy.",
     "Num_of_Courts": null,
@@ -3375,7 +3359,7 @@ module.exports = [{
     "lat": null,
     "lon": null
 }, {
-    "Prop_ID": "Q015",
+    "Prop_ID": "Q015A",
     "Name": "Forest Park",
     "Location": "108 St., Myrtle Ave. & Park Lane South",
     "Num_of_Courts": null,
@@ -3383,7 +3367,7 @@ module.exports = [{
     "lat": "40.7026",
     "lon": "-73.8686"
 }, {
-    "Prop_ID": "Q015",
+    "Prop_ID": "Q015B",
     "Name": "Forest Park",
     "Location": "Woodhaven Blvd. & Forest Park Dr.",
     "Num_of_Courts": null,
@@ -3391,7 +3375,7 @@ module.exports = [{
     "lat": "40.7015",
     "lon": "-73.8559"
 }, {
-    "Prop_ID": "Q015",
+    "Prop_ID": "Q015C",
     "Name": "Forest Park",
     "Location": "80 St. & Myrtle Ave.",
     "Num_of_Courts": "2",
@@ -3399,7 +3383,7 @@ module.exports = [{
     "lat": "40.7025",
     "lon": "-73.8684"
 }, {
-    "Prop_ID": "Q015",
+    "Prop_ID": "Q015D",
     "Name": "Forest Park (Sobelsohn P\/G)",
     "Location": "Park Lane S. & Abingdon Rd.",
     "Num_of_Courts": null,
@@ -3479,7 +3463,7 @@ module.exports = [{
     "lat": "40.6651",
     "lon": "-73.8502"
 }, {
-    "Prop_ID": "Q020",
+    "Prop_ID": "Q020A",
     "Name": "Highland Park Lower",
     "Location": "Jamaica Ave. & Cleveland St.",
     "Num_of_Courts": "4",
@@ -3487,7 +3471,7 @@ module.exports = [{
     "lat": "40.6838",
     "lon": "-73.8869"
 }, {
-    "Prop_ID": "Q020",
+    "Prop_ID": "Q020B",
     "Name": "Highland Park Upper",
     "Location": "Highland Blvd. & Heath Pl.",
     "Num_of_Courts": "1",
@@ -3575,7 +3559,7 @@ module.exports = [{
     "lat": "40.7545",
     "lon": "-73.872"
 }, {
-    "Prop_ID": "Q102",
+    "Prop_ID": "Q102A",
     "Name": "Juniper North Playground",
     "Location": "80 St. & Juniper Blvd. North",
     "Num_of_Courts": "1",
@@ -3583,7 +3567,7 @@ module.exports = [{
     "lat": "40.7209",
     "lon": "-73.8771"
 }, {
-    "Prop_ID": "Q102",
+    "Prop_ID": "Q102B",
     "Name": "Juniper South Playground",
     "Location": "74 St. & Juniper Blvd. South",
     "Num_of_Courts": "1",
@@ -3599,7 +3583,7 @@ module.exports = [{
     "lat": "40.7445",
     "lon": "-73.7874"
 }, {
-    "Prop_ID": "Q024",
+    "Prop_ID": "Q024A",
     "Name": "Kissena Park\/164 St. P\/G",
     "Location": "164 St. opposite Lithonia Ave.",
     "Num_of_Courts": "1",
@@ -3607,7 +3591,7 @@ module.exports = [{
     "lat": "40.7482",
     "lon": "-73.8032"
 }, {
-    "Prop_ID": "Q300",
+    "Prop_ID": "Q300C",
     "Name": "Lawrence St.",
     "Location": "Lawrence St., College Point Blvd. and Queens Botanical Gardens",
     "Num_of_Courts": "1",
@@ -3791,7 +3775,7 @@ module.exports = [{
     "lat": "40.7219",
     "lon": "-73.8237"
 }, {
-    "Prop_ID": "Q300",
+    "Prop_ID": "Q300D",
     "Name": "Rachel Carlson Park",
     "Location": "Colden St. & Juniper Ave.",
     "Num_of_Courts": "1",
@@ -3799,7 +3783,7 @@ module.exports = [{
     "lat": "40.7489",
     "lon": "-73.8222"
 }, {
-    "Prop_ID": "Q300",
+    "Prop_ID": "Q300E",
     "Name": "Rachel Carson Playground",
     "Location": "Colden St. & Juniper Ave.",
     "Num_of_Courts": null,
@@ -3879,7 +3863,7 @@ module.exports = [{
     "lat": "40.7441",
     "lon": "-73.7664"
 }, {
-    "Prop_ID": "Q024",
+    "Prop_ID": "Q024B",
     "Name": "Seven Seas Sports Courts\/Four Winds P\/G",
     "Location": "Booth Memorial Blvd. & 160 St.",
     "Num_of_Courts": "3",
@@ -3887,7 +3871,7 @@ module.exports = [{
     "lat": "40.7424",
     "lon": "-73.8079"
 }, {
-    "Prop_ID": "Q300",
+    "Prop_ID": "Q300F",
     "Name": "Silent Springs Playground",
     "Location": "Colden St. & Geranium Ave.",
     "Num_of_Courts": "1",
@@ -3911,7 +3895,7 @@ module.exports = [{
     "lat": "40.754",
     "lon": "-73.8894"
 }, {
-    "Prop_ID": "Q099",
+    "Prop_ID": "Q099C",
     "Name": "Triassic Playground",
     "Location": "Jewel Ave. & Van Wyck Expressway",
     "Num_of_Courts": "2",
@@ -3967,7 +3951,7 @@ module.exports = [{
     "lat": "40.723",
     "lon": "-73.8372"
 }, {
-    "Prop_ID": "Q099",
+    "Prop_ID": "Q099D",
     "Name": "World&rsquo;s Fair Playground",
     "Location": "62 Dr. and Grand Central Pkwy.",
     "Num_of_Courts": "1",

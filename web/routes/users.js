@@ -39,7 +39,8 @@ router.post('/signup', function (req, res, next) {
 
 router.post('/login', passport.authenticate('local'), (req, res)=>{
   newReq = req;
-  console.log(req);
+  user = req.body.username
+  
   res.send({
     message: 'logged in',
     user: req.body.username
@@ -48,7 +49,10 @@ router.post('/login', passport.authenticate('local'), (req, res)=>{
 
 router.get('/loggedin', (req, res)=>{
   if(newReq){
-    res.send(newReq.isAuthenticated());
+    res.send({auth: newReq.isAuthenticated(),
+    user: user});
+  }else{
+    res.send(false);
   }
 })
 
