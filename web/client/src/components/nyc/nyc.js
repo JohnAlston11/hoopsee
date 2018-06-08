@@ -81,7 +81,7 @@ export class NYC extends Component {
       <div>
         <Switch>
           <Route exact path='/courts' render={this.exactNYC} />
-          <Route path='/courts/:borough' component={Borough} />
+          <Route path='/courts/:borough' component={Borough} />z
         </Switch>
       </div>
     )
