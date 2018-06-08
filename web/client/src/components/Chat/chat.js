@@ -12,7 +12,7 @@ const Chat = ({messages, message, sendMessage, handleMessage}) =>{
                     <div key={key} className="messages">
                         <div>
                             <Time style={{float: 'right'}} value={new Date(message.time)} format="ddd MM/DD hh:mma" />
-                            {message.username}: {message.message}
+                            <span style={{fontWeight: 'bold'}} >{message.username}</span>: {message.message} <hr />
                         </div>
                     </div>
                 )
