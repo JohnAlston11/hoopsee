@@ -1,6 +1,5 @@
 import React from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-import {Link} from 'react-router-dom';
 
 const MapContainer = ({style, google, data, onMapClicked, onMarkerClick, activeMarker, showingInfoWindow, selectedPlace, accessible, link}) =>{
   
@@ -34,7 +33,7 @@ const MapContainer = ({style, google, data, onMapClicked, onMarkerClick, activeM
             <div>
               <a href={link}><h1>{selectedPlace.name}</h1></a>
               <h3>{selectedPlace.location}</h3>
-              <h4 hidden={accessible}><span role="img">&#9855;</span></h4>
+              <h4 hidden={accessible}><span aria-label='accessible' role="img">&#9855;</span></h4>
             </div>
           </InfoWindow>
         </Map>
