@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar, ScrollView, Image } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, ScrollView, Image, Button, Alert } from 'react-native';
 import Axios from 'axios';
 import bx from './images/bx.jpeg';
 import bk from './images/bk.jpeg';
@@ -31,10 +31,10 @@ export default class App extends React.Component {
         <Text style={{flex: 0.4, width: '100%', fontSize: 80, textAlign: 'center', color: 'steelblue', backgroundColor: 'black'}} >
           HoopSee
         </Text>
-        <ScrollView style={{flex: 5}}>  
+        <ScrollView style={{flex: 5, width: '100%'}}>  
           <Image style={{width: '100%', height: 280}} source={{uri:'http://triborodesign.com/public/user-content/files/2014/02/16/nikenyc_01-1142.jpg'}} />
           {this.images.map((pic, key)=>(
-            <Image style={{width: 400, height: 280}} source={pic} key={key} />
+            <Image style={{width: '100%', height: 280}} source={pic} key={key} />
           ))}
         </ScrollView>
         <ScrollView style={{flex: 3}}>
@@ -44,7 +44,12 @@ export default class App extends React.Component {
             </Text>
           ))}
         </ScrollView>
-        <Text></Text>
+        <View style={{width: '100%'}}>  
+          <Button
+          onPress={()=>Alert.alert('Going To Work Soon')}
+          title={'Login'}
+          />
+        </View>
       </View>
     );
   };
