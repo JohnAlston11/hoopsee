@@ -1,23 +1,29 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import {View, Text, StatusBar} from 'react-native';
+import { createStackNavigator } from 'react-navigation';
+import Axios from 'axios';
+import bx from './images/bx.jpeg';
+import bk from './images/bk.jpeg';
+import q from './images/queens.jpeg';
+import m from './images/m.jpeg';
+import nyc from './images/nyc.jpeg';
+import Home from './components/Home';
+import Login from './components/Login';
 
-export default class App extends React.Component {
-  
-  render() {
-    return (
-      <View style={styles.container}>
+const RootStack = createStackNavigator({
+  Home: Home,
+  Login: Login,
+},{
+  initialRouteName: 'Home'
+})
+
+export default class App extends React.Component{
+  render(){
+    return(
+      <View style={{flex: 1}} >
         <StatusBar hidden={true} />
-        <Text style={{fontSize: 80, textAlign: 'center', color: 'steelblue', flex: 1, backgroundColor: 'black'}} >HoopSee</Text>
+        <RootStack />
       </View>
-    );
-  };
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    )
+  }
+}
