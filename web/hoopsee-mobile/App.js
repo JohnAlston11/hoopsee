@@ -1,65 +1,29 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar, ScrollView, Image, Button, Alert } from 'react-native';
+import {View, Text, StatusBar} from 'react-native';
+import { createStackNavigator } from 'react-navigation';
 import Axios from 'axios';
 import bx from './images/bx.jpeg';
 import bk from './images/bk.jpeg';
 import q from './images/queens.jpeg';
 import m from './images/m.jpeg';
 import nyc from './images/nyc.jpeg';
+import Home from './components/Home';
+import Login from './components/Login';
 
-export default class App extends React.Component {
+const RootStack = createStackNavigator({
+  Home: Home,
+  Login: Login,
+},{
+  initialRouteName: 'Home'
+})
 
-  constructor(){
-    super();
-    this.state = {
-      data: []
-    };
-    this.images = [bx, bk, q, m, nyc];
-  }
-
-  componentDidMount(){
-    Axios.get('http://10.2.55.15:8000')
-    .then(res=>{
-      this.setState({data: res.data})
-    })
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
+export default class App extends React.Component{
+  render(){
+    return(
+      <View style={{flex: 1}} >
         <StatusBar hidden={true} />
-        <Text style={{flex: 0.4, width: '100%', fontSize: 80, textAlign: 'center', color: 'steelblue', backgroundColor: 'black'}} >
-          HoopSee
-        </Text>
-        <ScrollView style={{flex: 5, width: '100%'}}>  
-          <Image style={{width: '100%', height: 280}} source={{uri:'http://triborodesign.com/public/user-content/files/2014/02/16/nikenyc_01-1142.jpg'}} />
-          {this.images.map((pic, key)=>(
-            <Image style={{width: '100%', height: 280}} source={pic} key={key} />
-          ))}
-        </ScrollView>
-        <ScrollView style={{flex: 3}}>
-          {this.state.data.map((court, key)=>(
-            <Text key={key}>
-              {court.Name}
-            </Text>
-          ))}
-        </ScrollView>
-        <View style={{width: '100%'}}>  
-          <Button
-          onPress={()=>Alert.alert('Going To Work Soon')}
-          title={'Login'}
-          />
-        </View>
+        <RootStack />
       </View>
-    );
-  };
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'orangered'
-  },
-});
+    )
+  }
+}
