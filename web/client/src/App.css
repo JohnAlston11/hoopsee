@@ -105,6 +105,7 @@ p { margin: 0; }
   position: relative;
   width: 50vw;
   height: 60vh;
-  right: -45%;
-  margin-top: -30%
+  margin-right: 1%;
+  margin-top: -20%;
+  float: right
 }
