@@ -7,6 +7,17 @@ import q from '../images/queens.jpeg';
 import m from '../images/m.jpeg';
 import nyc from '../images/nyc.jpeg';
 
+class Logo extends React.Component{
+  render(){
+    return(
+      <Image 
+      source={require('../images/logo.png')}
+      style={{width: 100, height: 80, marginLeft: "35%"}}
+      />
+    )
+  }
+}
+
 export default class Home extends React.Component {
 
   constructor(){
@@ -16,9 +27,12 @@ export default class Home extends React.Component {
     };
     this.images = [bx, bk, q, m, nyc];
   }
+  static navigationOptions = {
+    headerTitle: <Logo />
+  }
 
   componentDidMount(){
-    Axios.get('http://192.168.0.149:8000')
+    Axios.get('http://10.2.55.34:8000')
     .then(res=>{
       this.setState({data: res.data})
     })
@@ -38,7 +52,11 @@ export default class Home extends React.Component {
         </ScrollView>
         <ScrollView style={{flex: 3}}>
           {this.state.data.map((court, key)=>(
-            <Text key={key}>
+            <Text onPress={()=> this.props.navigation.navigate('Court', {
+              borough: court.Prop_ID[0],
+              courtID: court.Prop_ID
+            })} style={{fontSize: 30}} key={key}
+              >
               {court.Name}
             </Text>
           ))}
