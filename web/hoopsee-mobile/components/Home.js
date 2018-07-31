@@ -32,13 +32,24 @@ export default class Home extends React.Component {
   }
 
   componentDidMount(){
-    Axios.get('http://10.2.55.34:8000')
+    Axios.get('http://192.168.1.6:8000')
     .then(res=>{
       this.setState({data: res.data})
     })
   }
+  componentDidUpdate(){
+    Axios.get('http://localhost:8000/users/loggedin')
+    .then(res=>{
+      console.log('Yerr you logged in but its buggin')
+      this.setState({
+        username: res.data.user
+      })
+    })
+  }
 
   render() {
+    const {username} = this.state;
+    const loginButton = username?null:<Button title="Login" onPress={() => this.props.navigation.navigate('Login')}/>
     return (
       <View style={styles.container}>
         <Text style={{flex: 0.4, width: '100%', fontSize: 80, textAlign: 'center', color: 'steelblue', backgroundColor: 'black'}} >
@@ -54,7 +65,8 @@ export default class Home extends React.Component {
           {this.state.data.map((court, key)=>(
             <Text onPress={()=> this.props.navigation.navigate('Court', {
               borough: court.Prop_ID[0],
-              courtID: court.Prop_ID
+              courtID: court.Prop_ID,
+              name: court.Name
             })} style={{fontSize: 30}} key={key}
               >
               {court.Name}
@@ -62,10 +74,7 @@ export default class Home extends React.Component {
           ))}
         </ScrollView>
         <View style={{width: '100%'}}>  
-          <Button
-            title="Login"
-            onPress={() => this.props.navigation.navigate('Login')}
-          />
+          {loginButton}
         </View>
       </View>
     );

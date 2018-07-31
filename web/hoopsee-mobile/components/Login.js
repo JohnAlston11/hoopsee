@@ -26,7 +26,7 @@ export default class Login extends C{
     }
     static navigationOptions = {
         headerTitle: <Logo />
-      }
+    }
 
     componentDidMount(){
         this.loadFonts()
