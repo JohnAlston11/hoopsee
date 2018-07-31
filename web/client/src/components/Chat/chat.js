@@ -7,16 +7,18 @@ import {Link} from 'react-router-dom';
 const Chat = ({messages, message, sendMessage, handleMessage}) =>{
     let renderMessages = () =>{
         if(messages){
-            return _.map(messages, (message, key)=>{
-                return(
-                    <div key={key} className="messages">
-                        <div>
-                            <Time style={{float: 'right'}} value={new Date(message.time)} format="ddd MM/DD hh:mma" />
-                            <span style={{fontWeight: 'bold'}} >{message.username}</span>: {message.message} <hr />
-                        </div>
-                    </div>
-                )
-            })
+            return( 
+                <div className="messages">
+                    {_.map(messages, (message, key)=>{
+                        return(
+                            <div key={key}>
+                                <Time style={{float: 'right'}} value={new Date(message.time)} format="ddd MM/DD hh:mma" />
+                                <span style={{fontWeight: 'bold'}} >{message.username}</span>: {message.message}
+                            </div>
+                        )
+                    })}
+                </div>
+            )
         }
         return (
             <h4 style={{textAlign: 'center'}} >No Messages, <Link to="/login">Sign In</Link> or If Already Signed In, Start Typing To Be The First.</h4>
@@ -29,7 +31,6 @@ const Chat = ({messages, message, sendMessage, handleMessage}) =>{
                     <div className="card">
                         <div className="card-body">
                             <div className="card-title">Global Chat</div>
-                            <hr/>
                             {renderMessages()}
                         </div>
                         <form onSubmit={(e)=>{e.preventDefault()}}>

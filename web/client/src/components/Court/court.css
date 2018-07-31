@@ -37,13 +37,18 @@
 .card-title{
 	text-align: center;
 	background-color: steelblue;
-	color: whitesmoke
+	color: whitesmoke;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 }
 
 .messages{
 	width: 99%;
-	margin-left: 3px
+	margin-left: 3px;
+	height: 92%;
+	overflow: scroll;
 }
+
 
 hr{
 background-color: black

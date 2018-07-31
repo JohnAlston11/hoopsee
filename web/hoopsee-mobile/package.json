@@ -21,9 +21,12 @@
   "dependencies": {
     "@expo/vector-icons": "^6.3.1",
     "expo": "^27.0.1",
+    "firebase": "^5.3.0",
+    "lodash": "^4.17.10",
     "native-base": "^2.5.2",
     "react": "16.3.1",
     "react-native": "~0.55.2",
-    "react-navigation": "^2.3.1"
+    "react-navigation": "^2.3.1",
+    "react-time": "^4.3.0"
   }
 }
