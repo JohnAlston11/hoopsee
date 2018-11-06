@@ -1,13 +1,14 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import './NavBar.css';
 
 const Nav = ({loggedin}) => {
     return(
         <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: '#2b669a'}}>
-            <Link className="navbar-brand" to="/"><img className="logo" src={require("../../images/logo.png")} alt="logo"/></Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
+            <Link className="navbar-brand" to="/"><img className="logo" src={require("../../images/logo.png")} alt="logo"/></Link>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item dropdown">
@@ -37,11 +38,7 @@ const Nav = ({loggedin}) => {
                     :
                     <Link className='nav-link' to='/logout'>Log Out</Link>
                     }
-                    {!loggedin?
-                    <Link className='nav-link' to='/signup'>Sign Up</Link>
-                    :
-                    null
-                    }
+                    {!loggedin ? <Link className='nav-link' to='/signup'>Sign Up</Link> : null}
                 </ul> 
             </div>
         </nav>

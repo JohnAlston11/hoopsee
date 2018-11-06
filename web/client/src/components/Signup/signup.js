@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router';
+import './signup.css';
 
 export default class Signup extends React.Component{
     constructor(){
@@ -33,7 +34,7 @@ export default class Signup extends React.Component{
             return <Redirect to='/login/done'/>;
         };
         return(
-            <div className="login">
+            <div className="signup">
 
                 <h1>Sign Up HERE!</h1>
 

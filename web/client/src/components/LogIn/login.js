@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router';
+import './Login.css';
 
 
 export default class Login extends React.Component{
@@ -30,13 +31,14 @@ export default class Login extends React.Component{
         if(done === 'done') return <h2>Welcome,<br/>Thanks for Signing Up!</h2>
         return <h2>Welcome</h2>
     };
+
     render(){
         const {username, pw1, redirect} = this.state;
         if(redirect){
             return <Redirect to='/' />;
         };
         return(
-            <div style={{textAlign: 'center', width: '300px'}} className='login'>
+            <div className='login'>
                 {this.signupDone()}
                 <form onSubmit={this.handleLogin} method="POST">
                     <div className="form-group">

@@ -3,7 +3,7 @@ import {GoogleApiWrapper} from 'google-maps-react';
 import axios from 'axios';
 import {Link, Switch, Route} from 'react-router-dom';
 import Borough from '../Borough/borough';
-import MapContainer from './map';
+import MapContainer from '../Map/map';
 
 // ...
 
@@ -27,7 +27,7 @@ export class NYC extends Component {
 
   onMarkerClick = (props, marker, e) =>{
     console.log(props);
-    let isAccessible = props.accessible !== "Y" ? true : false; 
+    let isAccessible = props.accessible === "Y";
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -53,13 +53,13 @@ export class NYC extends Component {
         <div className="courtNames">
           {this.state.data.map((court, key)=>(
               <Link key={key} to={`/courts/${court.Prop_ID[0]}/${court.Prop_ID}/`} > 
-                  <p className={'name'}>
+                  <p className='name'>
                       {court.Name}
                   </p> 
               </Link>
           ))}
         </div>
-        <div className={'map'}>
+        <div className='map'>
           <MapContainer data={data}
             showingInfoWindow={showingInfoWindow}
             activeMarker={activeMarker}

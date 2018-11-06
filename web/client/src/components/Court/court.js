@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import './court.css';
-import Chat from '../Chat/chat';
+import './Court.css';
+import Chat from '../Chat/Chat.js';
 import {database} from '../../firebase';
 
 export default class Court extends Component{
@@ -63,7 +63,7 @@ export default class Court extends Component{
                 message={this.state.message}
                 messages={this.state.messages}
                 sendMessage={this.sendMessage}
-                handleMessage={ev => this.setState({message: ev.target.value})}
+                handleMessage={(e) => this.setState({message: e.target.value})}
                 />
             </div>
         )

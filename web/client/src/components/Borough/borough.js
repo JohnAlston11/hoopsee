@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import axios from 'axios';
 import Borough from './selectedBorough';
-import MapContainer from '../nyc/map';
-import Court from '../Court/court';
+import MapContainer from '../Map/map';
+import Court from '../Court/Court';
 
 export default class Bronx extends Component{
     state = {

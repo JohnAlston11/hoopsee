@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import basketball from '../../images/basketball.png';
 
 export default class Home extends Component{
     state = {data: []};
@@ -15,8 +14,10 @@ export default class Home extends Component{
     render(){
         return(
             <div>
-                <img className="basketball" src={basketball} alt="basketball" style={{margin: '0 auto', width: '20vw',
-            marginTop: '100px'}} />
+                <div className="news">
+
+                </div>
+                
             </div>
         )
     }

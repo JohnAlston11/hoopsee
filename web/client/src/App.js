@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import {Route, Switch} from 'react-router-dom';
-import Nav from './components/navbar/navbar'
-import Home from './components/home/home.js';
-import Nyc from './components/nyc/nyc.js';
-import Login from './components/LogIn/login';
+import Nav from './components/NavBar/NavBar'
+import Home from './components/Home/Home.js';
+import Nyc from './components/NYC/NYC.js';
+import Login from './components/LogIn/Login';
 import Signup from './components/Signup/signup';
 import soon from './images/Comingsoon.png';
 import Logout from './components/LogOut/logout';
