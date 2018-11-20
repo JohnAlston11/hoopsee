@@ -15,7 +15,7 @@ const Nav = ({loggedin}) => {
                         <Link className="nav-link dropdown-toggle" to='/courts' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Play Ball
                         </Link>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <Link className="dropdown-item" to="/courts">All of NYC</Link>
                             <Link className="dropdown-item" to="/courts/X">Bronx</Link>
                             <Link className="dropdown-item" to="/courts/B">Brooklyn</Link>

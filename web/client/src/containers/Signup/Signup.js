@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router';
-import './signup.css';
+import './Signup.css';
 
 export default class Signup extends React.Component{
     constructor(){

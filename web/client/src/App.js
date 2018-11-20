@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import {Route, Switch} from 'react-router-dom';
-import Nav from './components/NavBar/NavBar'
-import Home from './components/Home/Home.js';
-import Nyc from './components/NYC/NYC.js';
-import Login from './components/LogIn/Login';
-import Signup from './components/Signup/signup';
+import Nav from './containers/NavBar/NavBar.js'
+import Home from './containers/Home/Home.js';
+import Nyc from './containers/NYC/NYC.js';
+import Login from './containers/LogIn/Login.js';
+import Signup from './containers/Signup/Signup.js';
 import soon from './images/Comingsoon.png';
-import Logout from './components/LogOut/logout';
+import Logout from './containers/LogOut/Logout';
+
 class App extends Component {
   constructor(props){
     super();
