@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import './Court.css';
 import Chat from '../Chat/Chat.js';
-import {database} from '../../firebase';
+import firebase from '../../firebase';
 
 export default class Court extends Component{
     constructor(props){
@@ -19,7 +19,7 @@ export default class Court extends Component{
             const {username, message} = this.state;
             ev.preventDefault();
             if(username){
-                database.ref(`${this.props.match.params.id}`).push({
+                firebase.database().ref(`${this.props.match.params.id}`).push({
                     username: username,
                     message: message,
                     time: `${new Date()}`
@@ -45,7 +45,7 @@ export default class Court extends Component{
             })
         })
 
-        database.ref(`/${this.props.match.params.id}`).on('value', (snapshot)=>{
+        firebase.database().ref(`/${this.props.match.params.id}`).on('value', (snapshot)=>{
             if(snapshot.val()){
                 this.setState({messages: snapshot.val()})
             };

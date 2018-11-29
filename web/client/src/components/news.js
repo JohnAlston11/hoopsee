@@ -13,3 +13,7 @@ export default class News extends Component {
         )
     }
 }
+
+News.defaultProps = {
+    news: "This is weezle news"
+}

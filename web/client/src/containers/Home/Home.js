@@ -2,7 +2,11 @@ import React, {Component} from 'react';
 import './Home.css';
 import axios from 'axios';
 import News from '../../components/news';
-const key = "070e717dfb304a86bb671ce9c6080d4e"
+
+const newsRequest = {
+    url: "https://api.fantasydata.net/nba/v2/JSON/News",
+    key: "2dbd45f9f7e64e5f9ea322885f54223d"
+}
 
 // GET "https://api.fantasydata.net/v3/nba/news-rotoballer/{format}/RotoBallerPremiumNews"
 // -H "Ocp-Apim-Subscription-Key: {subscription key}"
@@ -18,14 +22,14 @@ export default class Home extends Component{
     }
 
     componentDidMount(){
-        axios.get("https://api.fantasydata.net/v3/nba/news-rotoballer/{format}/RotoBallerPremiumNews", 
+        axios.get(newsRequest.url, 
         {
             params: {format: "JSON"} ,
-            headers: {"Ocp-Apim-Subscription-Key": key}
+            headers: {"Ocp-Apim-Subscription-Key": newsRequest.key}
         })
         .then( (res) =>{
             console.log(res);
-            this.setState({data: res.data})
+            this.setState({data: JSON.stringify(res.data)})
         })
         .catch((err) => {
             console.log(err);
