@@ -1,58 +1,83 @@
 import React from 'react';
-import axios from 'axios';
-import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router';
+import {connect} from 'react-redux';
+import Form from '../../components/Login';
 import './Login.css';
+import firebase from '../../firebase';
 
 
-export default class Login extends React.Component{
-    constructor(){
-        super();
+
+class Login extends React.Component{
+    constructor(props){
+
+        super(props);
+
         this.state = {
-            username: '',
-            pw1: '',
-            redirect: false
+            errorMessage: "",
+            errorCode: ""
         }
+
     }
-    
+
+
+    handleEmailInput = e => {
+        const { dispatch } = this.props;
+        dispatch({ type: "SET_EMAIL", payload: e.target.value });
+    };
+
+    handlePwInput = e => {
+        const { dispatch } = this.props;
+        dispatch({ type: "SET_PASSWORD", payload: e.target.value });
+    };
+
     handleLogin = (e) =>{
-        const {username, pw1} = this.state;
+        const {email, password} = this.props.loginReducer;
+        const {auth, fetching, fetched} = this.props.authReducer;
+        
         e.preventDefault();
-        axios.post('http://localhost:8000/users/login', {username: username, password: pw1})
-        .then(res=>{
-            this.setState({redirect: true});
-            window.location.reload();
-        })
-        .catch(err=>{console.log(err)})
+        console.log(email, " is a ", typeof email)
+        firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(response=>console.log(response))
+        .catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            this.setState({errorCode: errorCode, errorMessage: errorMessage});
+            // ...
+        });
     };
 
     signupDone = () =>{
-        let done = this.props.location.pathname.split('/')[2];
-        if(done === 'done') return <h2>Welcome,<br/>Thanks for Signing Up!</h2>
+        let done = this.props.location.pathname.split("/")[2];
+        if(done === "done") return <h2>Welcome,<br/>Thanks for Signing Up!</h2>
         return <h2>Welcome</h2>
     };
 
+    
+
     render(){
-        const {username, pw1, redirect} = this.state;
-        if(redirect){
-            return <Redirect to='/' />;
-        };
+        const {email, password} = this.props.loginReducer;
+        // if(redirect){
+        //     return <Redirect to='/' />;
+        // };
         return(
-            <div className='login'>
-                {this.signupDone()}
-                <form onSubmit={this.handleLogin} method="POST">
-                    <div className="form-group">
-                        <label htmlFor="loginuser">Username</label>
-                        <input type="text" className="form-control" name="username" id="loginuser" placeholder="Username" value={username} onChange={(e)=>{this.setState({username: e.target.value})}} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="loginpw">Password</label>
-                        <input type="password" className="form-control" name="password" id="loginpw" placeholder="Password" value={pw1} onChange={(e)=>{this.setState({pw1: e.target.value})}} />
-                    </div>
-                    <button type="submit" className="btn btn-primary btn-block btn-large">Log In</button>
-                    <p>Don't have an account? <br /><Link to='/signup'>Sign Up Here</Link></p>
-                </form>
-            </div>
+            <Form
+            signupDone={this.signupDone}
+            handleLogin={this.handleLogin}
+            emailValue={email}
+            pwValue={password}
+            handleEmailInput={this.handleEmailInput}
+            handlePwInput={this.handlePwInput}
+            />
         );
     };
 }
+
+const mapStateToProps = state => {
+    return {
+        loginReducer: state.loginReducer,
+        authReducer: state.authReducer
+    }
+}
+
+export default connect(mapStateToProps)(Login)
