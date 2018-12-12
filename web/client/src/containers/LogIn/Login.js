@@ -1,5 +1,5 @@
 import React from 'react';
-import {Redirect} from 'react-router';
+// import {Redirect} from 'react-router';
 import {connect} from 'react-redux';
 import Form from '../../components/Login';
 import './Login.css';
@@ -13,31 +13,25 @@ class Login extends React.Component{
         super(props);
 
         this.state = {
+            email: "",
+            password: "",
             errorMessage: "",
             errorCode: ""
         }
 
     }
 
-
-    handleEmailInput = e => {
-        const { dispatch } = this.props;
-        dispatch({ type: "SET_EMAIL", payload: e.target.value });
-    };
-
-    handlePwInput = e => {
-        const { dispatch } = this.props;
-        dispatch({ type: "SET_PASSWORD", payload: e.target.value });
-    };
-
     handleLogin = (e) =>{
-        const {email, password} = this.props.loginReducer;
-        const {auth, fetching, fetched} = this.props.authReducer;
+        const {email, password} = this.state;
+        const {dispatch} = this.props;
         
         e.preventDefault();
-        console.log(email, " is a ", typeof email)
+
         firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(response=>console.log(response))
+        .then(response=>{
+            dispatch({type: "LOG_IN"});
+            dispatch({type: "SET_USER_INFO", payload: response.user});
+        })
         .catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;
@@ -56,7 +50,7 @@ class Login extends React.Component{
     
 
     render(){
-        const {email, password} = this.props.loginReducer;
+        const {email, password} = this.state;
         // if(redirect){
         //     return <Redirect to='/' />;
         // };
@@ -66,8 +60,8 @@ class Login extends React.Component{
             handleLogin={this.handleLogin}
             emailValue={email}
             pwValue={password}
-            handleEmailInput={this.handleEmailInput}
-            handlePwInput={this.handlePwInput}
+            handleEmailInput={(e)=>this.setState({email: e.target.value})}
+            handlePwInput={(e)=>this.setState({password: e.target.value})}
             />
         );
     };
@@ -75,7 +69,7 @@ class Login extends React.Component{
 
 const mapStateToProps = state => {
     return {
-        loginReducer: state.loginReducer,
+        userReducer: state.userReducer,
         authReducer: state.authReducer
     }
 }

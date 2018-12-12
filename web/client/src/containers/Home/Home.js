@@ -28,8 +28,8 @@ export default class Home extends Component{
             headers: {"Ocp-Apim-Subscription-Key": newsRequest.key}
         })
         .then( (res) =>{
-            console.log(res);
-            this.setState({data: JSON.stringify(res.data)})
+            console.log(res.data);
+            this.setState({data: res.data})
         })
         .catch((err) => {
             console.log(err);

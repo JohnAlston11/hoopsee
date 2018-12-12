@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@firebase/app": "^0.3.5",
+    "@firebase/database": "^0.3.7",
     "axios": "^0.18.0",
     "firebase": "^5.5.9",
     "firebase-admin": "^6.3.0",

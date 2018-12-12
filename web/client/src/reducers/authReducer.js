@@ -12,7 +12,6 @@ export default function reducer (state = {
                 ...state,
                 auth: { loggedIn: true }
             }
-            break;
         }
         
         case "LOG_OUT": {
@@ -20,12 +19,10 @@ export default function reducer (state = {
                 ...state,
                 auth: { loggedIn: false }
             }
-            break;
         }
 
         default: {
             return state;
-            break;
         } 
     }
 }

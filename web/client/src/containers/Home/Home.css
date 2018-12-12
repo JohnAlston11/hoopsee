@@ -2,4 +2,12 @@
     height: 70vh;
     width: 20vw;
     border: 2px solid black;
+    overflow: scroll;
+    border-radius: 1em;
+}
+
+.news-content{
+    border: 3px solid blue;
+    border-radius: 1em;
+
 }
